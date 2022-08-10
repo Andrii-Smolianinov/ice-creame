@@ -1,0 +1,211 @@
+.about__section {
+  background-color: $section-color;
+
+@include section-class(40px,20px);
+
+@include mq(tablet){
+    @include section-class(20px, 40px);
+}
+
+@include mq(desktop) {
+    @include section-class(60px, 100px);
+}
+}
+
+
+.about__overlay--left{
+background-repeat: no-repeat;
+      
+//// Ретінізація фонових зображень + підтримка формату webp
+  @include mq(mobile-only) {
+    background-position: 0px 534px;
+    //574-40=534
+    
+    background-image: url(../images/about/bgi/s/bgi-milk--left.png);
+    background-image: -webkit-image-set(
+      url(../images/about/bgi/s/bgi-milk--left.webp) 1x
+    );
+    @include mq(retina) {
+      background-image: url(../images/about/bgi/s/bgi-milk--left@2x.png);
+      background-image: -webkit-image-set(
+        url(../images/about/bgi/s/bgi-milk--left@2x.webp) 2x
+      );
+    }
+  }
+
+  @include mq(desktop) {
+    background-position: 0px 195px;
+
+    background-image: url(../images/about/bgi/l/bgi-milk--left.png);
+    background-image: -webkit-image-set(
+      url(../images/about/bgi/l/bgi-milk--left.webp) 1x
+    );
+    @include mq(retina) {
+      background-image: url(../images/about/bgi/l/bgi-milk--left@2x.png);
+      background-image: -webkit-image-set(
+        url(../images/about/bgi/l/bgi-milk--left@2x.webp) 2x
+      );
+    }
+  }
+}
+
+.about__overlay--right {
+  background-repeat: no-repeat;
+
+  //// Ретінізація фонових зображень + підтримка формату webp
+  @include mq(mobile-only) {
+    background-position: right 534px;
+    //574-40=534
+
+    background-image: url(../images/about/bgi/s/bgi-milk--right.png);
+    background-image: -webkit-image-set(url(../images/about/bgi/s/bgi-milk--right.webp) 1x);
+
+    @include mq(retina) {
+      background-image: url(../images/about/bgi/s/bgi-milk--right@2x.png);
+      background-image: -webkit-image-set(url(../images/about/bgi/s/bgi-milk--right@2x.webp) 2x);
+    }
+  }
+
+  @include mq(desktop) {
+    background-position: right 195px;
+
+    background-image: url(../images/about/bgi/l/bgi-milk--right.png);
+    background-image: -webkit-image-set(url(../images/about/bgi/l/bgi-milk--right.webp) 1x);
+
+    @include mq(retina) {
+      background-image: url(../images/about/bgi/l/bgi-milk--right@2x.png);
+      background-image: -webkit-image-set(url(../images/about/bgi/l/bgi-milk--right@2x.webp) 2x);
+    }
+  }
+}
+
+
+.about__content{
+  margin-top: 32px;
+
+  @include mq(tablet) {
+    display: flex;
+    margin-top: 40px;
+        }
+
+  @include mq(desktop) {
+        margin-top: 60px;
+        }
+
+}
+
+.about__image{
+    display: block;
+    height: auto;
+
+    @include mq(mobile-only) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: calc(100% - 10px);
+      }
+
+    @include mq(tablet) {
+          max-width: 336px;
+        }
+
+    @include mq(desktop) {
+          max-width: 501px;
+        }
+}
+
+.about__textContent{
+    padding-top: 40px;
+    padding-left: 5px;
+    max-width: calc(100% - 65px);
+
+    font-family: 'DM Sans';
+    color: $color-font-second;
+
+    @media screen and (min-width: 400px) {
+        padding-left: 30px;
+        max-width: calc(100% - 60px);
+      }
+
+    @include mq(tablet) {
+      padding-left: 32px;
+      max-width: 366px;
+      }
+    
+      @include mq(desktop) {
+        padding-top: 90px;
+        padding-left: 139px;
+        max-width: 602px;
+      }
+
+}
+
+.about__title{
+          color: $color-font-main;
+
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 1.62;
+          
+            @include mq(tablet) {
+              font-size: 14px;
+              line-height: 1.76;
+            }
+          
+          
+            @include mq(desktop) {
+              font-size: 16px;
+              letter-spacing: 0.04em;
+            }
+}
+
+.about__text{
+          margin-top: 24px;
+
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 1.62;
+      
+          @include mq(tablet) {
+            margin-top: 20px;
+      
+            font-size: 14px;
+            line-height: 1.76;
+            letter-spacing: 0.04em;
+          }
+      
+      
+          @include mq(desktop) {
+            margin-top: 32px;
+
+            line-height: 1.94;
+          }
+}
+
+.about__button{
+  @extend %button;
+    margin-top: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+
+    @include mq(tablet) {
+      margin-top: 40px;
+          font-size: 16px;
+          line-height: 1.31;
+      } 
+
+      
+}
+
+// Модалка
+
+.about__text.modal--white,
+.section__subtitle.modal--white{
+  color: $color-font-white;
+}
+
+.about__title.modal--white{
+  margin-top: 15px;
+  color: $color-font-white;
+}

@@ -1,0 +1,16 @@
+<section class="section">
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <input type="button" value="Send Email" onclick="sendEmail()" />
+</section>
+
+<script>
+  Email.send({
+    Host: 'smtp.ukr.net',
+    Username: 'ice-padawans@ukr.net',
+    Password: '54545455454',
+    To: 'tripoli80@gmail.com',
+    From: 'ice-padawans@ukr.net',
+    Subject: 'PromoCode',
+    Body: '<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>',
+  }).then(message => alert(message));
+</script>
